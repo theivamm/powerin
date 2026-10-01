@@ -74,6 +74,7 @@ const buildMenu = () => {
     .to(menu, { clipPath: `circle(150% at ${r.left + r.width / 2}px ${r.top + r.height / 2}px)`, duration: 0.8 })
     .from('.menu__links a span', { yPercent: 120, rotate: 6, duration: 0.7, stagger: 0.07, ease: 'power4.out' }, '-=0.35')
     .from('.menu__links a i', { opacity: 0, x: -14, duration: 0.5, stagger: 0.07 }, '<')
+    .from('.menu__close', { scale: 0, rotate: -180, duration: 0.7, ease: 'back.out(2)' }, 0.4)
     .from('.menu__foot > *', { y: 30, opacity: 0, duration: 0.6, stagger: 0.1, ease: 'power3.out' }, '-=0.5')
     .from('.menu__ghost', { xPercent: -15, opacity: 0, duration: 1.1, ease: 'power3.out' }, 0.2);
 };
@@ -93,6 +94,7 @@ const setMenu = (open) => {
 };
 burger.addEventListener('click', () => setMenu(!burger.classList.contains('is-open')));
 $$('a', menu).forEach((a) => a.addEventListener('click', () => setMenu(false)));
+$('#menuClose').addEventListener('click', () => setMenu(false));
 addEventListener('keydown', (e) => { if (e.key === 'Escape' && burger.classList.contains('is-open')) setMenu(false); });
 addEventListener('resize', () => { if (innerWidth > 900 && burger.classList.contains('is-open')) setMenu(false); });
 
@@ -100,6 +102,8 @@ if (!gsap || !ScrollTrigger) {
   console.warn('GSAP no cargó: la página funciona sin animaciones.');
 } else if (!reduce) {
   gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.config({ ignoreMobileResize: true });
+  document.fonts?.ready.then(() => ScrollTrigger.refresh());
   initMotion();
 }
 
@@ -228,7 +232,7 @@ function initMotion() {
     () => ({ x: rand(-60, 60), opacity: 0, rotate: rand(-3, 3) }),
   ];
   ScrollTrigger.batch('[data-reveal]', {
-    start: 'top 90%',
+    start: 'top 95%',
     once: true,
     onEnter: (els) => els.forEach((el, i) => gsap.fromTo(el, pick(revealFrom)(), { x: 0, y: 0, scale: 1, rotate: 0, opacity: 1, duration: 0.9, delay: i * 0.1, ease: 'power3.out', clearProps: 'transform' })),
   });
@@ -299,4 +303,5 @@ function initMotion() {
   );
 
   addEventListener('load', () => ScrollTrigger.refresh());
+  setTimeout(() => ScrollTrigger.refresh(), 1500);
 }

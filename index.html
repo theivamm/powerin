@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Power In — Proteína vegetal diseñada con ingeniería nutricional</title>
+    <meta
+      name="description"
+      content="Power In combina precisión científica y origen 100% vegetal. Sport para el rendimiento deportivo, Vital para una vida que no para. Pedí tu muestra gratis."
+    />
+    <meta name="theme-color" content="#5B3DF5" />
+
+    <meta property="og:title" content="Power In — Nutrición de precisión, proteína vegetal" />
+    <meta property="og:description" content="Ingeniería nutricional aplicada a la proteína vegetal. Pedí tu muestra gratis." />
+    <meta property="og:type" content="website" />
+
+    <link rel="icon" href="/logo-power-in.svg" type="image/svg+xml" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;800&family=Inter:wght@300;400;500;600&family=Bebas+Neue&family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#hero">Ir al contenido</a>
+
+    <!-- ============ HEADER / NAV ============ -->
+    <header class="nav" id="nav">
+      <div class="container nav__inner">
+        <a class="nav__brand" href="#hero" aria-label="Power In — inicio">
+          <img src="/logo-power-in.svg" alt="Power In" />
+        </a>
+
+        <nav class="nav__links" id="navLinks" aria-label="Navegación principal">
+          <a href="#por-que">Por qué Power In</a>
+          <a href="#productos">Productos</a>
+          <a href="#comparativa">Comparativa</a>
+          <a href="#muestra">Cómo pedir tu muestra</a>
+          <a href="#contacto" class="btn btn--sm btn--primary nav__cta-mobile">Quiero mi muestra gratis</a>
+        </nav>
+
+        <div class="nav__actions">
+          <a href="#contacto" class="btn btn--sm btn--primary">Quiero mi muestra gratis</a>
+          <button class="nav__burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- ============ 1. HERO ============ -->
+      <section class="hero" id="hero">
+        <div class="hero__bg" aria-hidden="true">
+          <svg class="molecule" viewBox="0 0 600 600" role="presentation">
+            <g class="molecule__net">
+              <line x1="300" y1="300" x2="300" y2="120" />
+              <line x1="300" y1="300" x2="180" y2="210" />
+              <line x1="300" y1="300" x2="420" y2="210" />
+              <line x1="300" y1="300" x2="230" y2="450" />
+              <line x1="300" y1="300" x2="370" y2="450" />
+              <line x1="300" y1="120" x2="420" y2="210" />
+              <line x1="300" y1="120" x2="180" y2="210" />
+              <line x1="180" y1="210" x2="230" y2="450" />
+              <line x1="420" y1="210" x2="370" y2="450" />
+            </g>
+            <g class="molecule__nodes">
+              <circle class="node" cx="300" cy="120" r="14" />
+              <circle class="node node--delay" cx="180" cy="210" r="9" />
+              <circle class="node" cx="420" cy="210" r="9" />
+              <circle class="node node--delay" cx="230" cy="450" r="9" />
+              <circle class="node" cx="370" cy="450" r="9" />
+            </g>
+            <g class="molecule__bloom" transform="translate(300 300)">
+              <g class="bloom">
+                <ellipse rx="14" ry="42" transform="rotate(0)" />
+                <ellipse rx="14" ry="42" transform="rotate(60)" />
+                <ellipse rx="14" ry="42" transform="rotate(120)" />
+                <ellipse rx="14" ry="42" transform="rotate(180)" />
+                <ellipse rx="14" ry="42" transform="rotate(240)" />
+                <ellipse rx="14" ry="42" transform="rotate(300)" />
+              </g>
+              <circle class="bloom__core" r="13" />
+            </g>
+          </svg>
+        </div>
+
+        <div class="container hero__grid">
+          <div class="hero__copy">
+            <p class="eyebrow reveal">Ciencia + vegetal + rendimiento + bienestar</p>
+            <h1 class="hero__title reveal">
+              Proteína vegetal<br />diseñada con<br /><span class="grad">ingeniería nutricional.</span>
+            </h1>
+            <p class="hero__sub reveal">
+              Power In combina precisión científica y origen 100% vegetal — para tu rendimiento con
+              <strong>Sport</strong>, o para tu día a día con <strong>Vital</strong>.
+            </p>
+
+            <div class="hero__actions reveal">
+              <a href="#contacto" class="btn btn--primary btn--lg">Quiero mi muestra gratis</a>
+              <a href="#productos" class="btn btn--ghost btn--lg">Conocer las líneas</a>
+            </div>
+
+            <ul class="badges reveal" aria-label="Atributos del producto">
+              <li>100% vegano</li>
+              <li>Sin azúcares añadidos</li>
+              <li>Sin gluten</li>
+              <li>Sin lactosa</li>
+            </ul>
+          </div>
+
+          <div class="hero__art reveal" aria-hidden="true">
+            <div class="pack pack--sport">
+              <div class="pack__cap"></div>
+              <div class="pack__body">
+                <img class="pack__logo" src="/logo-power-in-sport.svg" alt="" />
+                <span class="pack__tag">20 g · PORCIÓN</span>
+                <span class="pack__line">SPORT</span>
+              </div>
+            </div>
+            <div class="pack pack--vital">
+              <div class="pack__cap"></div>
+              <div class="pack__body">
+                <img class="pack__logo" src="/logo-power-in-vital.svg" alt="" />
+                <span class="pack__tag">10 g · PORCIÓN</span>
+                <span class="pack__line">VITAL</span>
+              </div>
+            </div>
+            <div class="hero__ring"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 2. POR QUÉ POWER IN ============ -->
+      <section class="section why" id="por-que">
+        <div class="container">
+          <header class="section__head">
+            <p class="eyebrow reveal">Por qué Power In</p>
+            <h2 class="section__title reveal">Ingeniería detrás de la proteína vegetal.</h2>
+            <p class="section__lead reveal">
+              Nutrición de precisión que no tiene por qué ser sintética. Cada fórmula se diseña desde la
+              ingeniería nutricional y se construye enteramente a partir de proteína vegetal.
+            </p>
+          </header>
+
+          <div class="why__grid">
+            <article class="card card--why reveal">
+              <span class="card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2v20M4 7h16M7 7l-3 6h6L7 7Zm10 0-3 6h6l-3-6Z" /><circle cx="12" cy="2" r="1.6" /></svg>
+              </span>
+              <h3>Ingeniería nutricional</h3>
+              <p>Formulada con el mismo rigor que un suplemento de alto rendimiento, 100% vegetal.</p>
+            </article>
+
+            <article class="card card--why reveal">
+              <span class="card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7Z" /><circle cx="12" cy="9" r="2.6" /></svg>
+              </span>
+              <h3>Pionero en Argentina</h3>
+              <p>Hoy no existe un producto equivalente en el mercado local.</p>
+            </article>
+
+            <article class="card card--why reveal">
+              <span class="card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></svg>
+              </span>
+              <h3>Sin concesiones</h3>
+              <p>100% vegano, sin gluten, sin lactosa, sin azúcares añadidos.</p>
+            </article>
+
+            <article class="card card--why reveal">
+              <span class="card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3.5 2" /></svg>
+              </span>
+              <h3>Para cada ritmo</h3>
+              <p>Una línea para el rendimiento deportivo, otra para el día a día.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 3. PRODUCTOS ============ -->
+      <section class="section lines" id="productos">
+        <div class="container">
+          <header class="section__head">
+            <p class="eyebrow reveal">Las dos líneas</p>
+            <h2 class="section__title reveal">Diseñada para tu ritmo.</h2>
+            <p class="section__lead reveal">
+              SPORT: rendimiento + recuperación + actividad. VITAL: bienestar + nutrición + vida activa.
+            </p>
+          </header>
+
+          <div class="lines__grid">
+            <!-- SPORT -->
+            <article class="line line--sport reveal">
+              <div class="line__head">
+                <img class="line__logo" src="/logo-power-in-sport.svg" alt="Power In Sport" />
+              </div>
+              <p class="line__territory">Ingeniería nutricional aplicada al rendimiento deportivo.</p>
+              <p class="line__grams"><b data-count="20">0</b><i>g</i> <span>de proteína vegetal por porción</span></p>
+              <ul class="line__list">
+                <li>Pensada para después del entrenamiento.</li>
+                <li>Recuperación muscular.</li>
+                <li>Energía sostenida, sin azúcares añadidos.</li>
+              </ul>
+              <blockquote class="line__insight">“Quiero que mi nutrición acompañe lo que hago.”</blockquote>
+              <a href="#contacto?linea=sport" class="btn btn--light btn--block" data-line="sport">Quiero probar Sport</a>
+            </article>
+
+            <!-- VITAL -->
+            <article class="line line--vital reveal">
+              <div class="line__head">
+                <img class="line__logo" src="/logo-power-in-vital.svg" alt="Power In Vital" />
+              </div>
+              <p class="line__territory">Nutrición inteligente para una vida que no para.</p>
+              <p class="line__grams"><b data-count="10">0</b><i>g</i> <span>de proteína vegetal por porción</span></p>
+              <ul class="line__list">
+                <li>Pensada para el día a día, con o sin actividad física.</li>
+                <li>Bienestar y vitalidad sostenidos.</li>
+                <li>Se adapta a tu rutina, sin importar tu edad.</li>
+              </ul>
+              <blockquote class="line__insight">“Quiero seguir haciendo lo que me gusta y sentirme bien mientras lo hago.”</blockquote>
+              <a href="#contacto?linea=vital" class="btn btn--dark btn--block" data-line="vital">Quiero probar Vital</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 4. COMPARATIVA ============ -->
+      <section class="section compare" id="comparativa">
+        <div class="container container--narrow">
+          <header class="section__head">
+            <p class="eyebrow reveal">Diferenciación</p>
+            <h2 class="section__title reveal">Power In vs. proteínas tradicionales.</h2>
+            <p class="section__lead reveal">
+              Comparación contra la categoría en general de proteínas en polvo: hoy no existe un competidor
+              directo equivalente en el país.
+            </p>
+          </header>
+
+          <div class="table-wrap reveal">
+            <table class="table">
+              <caption class="sr-only">Comparación entre Power In y las proteínas tradicionales</caption>
+              <thead>
+                <tr>
+                  <th scope="col"><span class="sr-only">Característica</span></th>
+                  <th scope="col" class="is-us">
+                    <img src="/logo-power-in.svg" alt="Power In" />
+                  </th>
+                  <th scope="col">Proteínas tradicionales</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Origen de la proteína</th>
+                  <td class="is-us">100% vegetal</td>
+                  <td>Animal o mixta, según producto</td>
+                </tr>
+                <tr>
+                  <th scope="row">Azúcares añadidos</th>
+                  <td class="is-us">0 g</td>
+                  <td>Varía — muchas sí incluyen</td>
+                </tr>
+                <tr>
+                  <th scope="row">Apto vegano</th>
+                  <td class="is-us">Sí</td>
+                  <td>No siempre</td>
+                </tr>
+                <tr>
+                  <th scope="row">Sin gluten / sin lactosa</th>
+                  <td class="is-us">Sí, en ambos casos</td>
+                  <td>No siempre</td>
+                </tr>
+                <tr>
+                  <th scope="row">Enfoque de formulación</th>
+                  <td class="is-us">Ingeniería nutricional vegetal</td>
+                  <td>Fórmulas genéricas estándar</td>
+                </tr>
+                <tr>
+                  <th scope="row">Disponibilidad en Argentina</th>
+                  <td class="is-us">Pionero — sin un producto equivalente hoy</td>
+                  <td>Múltiples opciones genéricas</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 5. CÓMO PEDIR TU MUESTRA ============ -->
+      <section class="section steps" id="muestra">
+        <div class="container">
+          <header class="section__head">
+            <p class="eyebrow reveal">Sin fricción</p>
+            <h2 class="section__title reveal">Cómo pedir tu muestra.</h2>
+          </header>
+
+          <ol class="steps__grid">
+            <li class="step reveal">
+              <span class="step__num">01</span>
+              <h3>Completá el formulario</h3>
+              <p>Contanos tu nombre, contacto y qué línea te interesa.</p>
+            </li>
+            <li class="step reveal">
+              <span class="step__num">02</span>
+              <h3>Te contactamos</h3>
+              <p>Nuestro equipo confirma el envío en menos de 48 horas.</p>
+            </li>
+            <li class="step reveal">
+              <span class="step__num">03</span>
+              <h3>Recibís tu muestra gratis</h3>
+              <p>La probás sin compromiso.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============ 6. CTA FINAL + FORM ============ -->
+      <section class="section final" id="contacto">
+        <div class="container final__grid">
+          <div class="final__copy">
+            <h2 class="final__title reveal">Probá la proteína vegetal que la ciencia diseñó para vos.</h2>
+            <p class="final__sub reveal">
+              Pedí tu muestra gratuita y descubrí la diferencia de la ingeniería nutricional vegetal.
+            </p>
+            <ul class="final__points reveal">
+              <li>Muestra gratuita, sin compromiso.</li>
+              <li>Confirmación de envío en menos de 48 h.</li>
+              <li>Elegís Sport, Vital o ninguna de las dos.</li>
+            </ul>
+          </div>
+
+          <form class="form reveal" id="sampleForm" novalidate>
+            <div class="form__row">
+              <label class="field">
+                <span>Nombre</span>
+                <input type="text" name="nombre" placeholder="Tu nombre" required />
+                <em class="field__error">Ingresá tu nombre.</em>
+              </label>
+              <label class="field">
+                <span>Email</span>
+                <input type="email" name="email" placeholder="nombre@email.com" required />
+                <em class="field__error">Ingresá un email válido.</em>
+              </label>
+            </div>
+
+            <div class="form__row">
+              <label class="field">
+                <span>Teléfono</span>
+                <input type="tel" name="telefono" placeholder="+54 9 11 0000 0000" required />
+                <em class="field__error">Ingresá un teléfono válido.</em>
+              </label>
+              <label class="field">
+                <span>Línea de interés</span>
+                <select name="linea" required>
+                  <option value="sport">Sport</option>
+                  <option value="vital">Vital</option>
+                  <option value="no-se">No estoy seguro</option>
+                </select>
+                <em class="field__error">Elegí una opción.</em>
+              </label>
+            </div>
+
+            <label class="field">
+              <span>Comentario <i>(opcional)</i></span>
+              <textarea name="comentario" rows="3" placeholder="¿Entrenás, cómo es tu rutina, qué buscás?"></textarea>
+            </label>
+
+            <button type="submit" class="btn btn--light btn--lg btn--block">Solicitar muestra gratis</button>
+
+            <p class="form__legal">
+              Al enviar aceptás el tratamiento de tus datos para coordinar el envío. Ver
+              <a href="#">política de privacidad</a>.
+            </p>
+
+            <div class="form__ok" id="formOk" role="status" hidden>
+              <strong>¡Gracias!</strong> Recibimos tu pedido. Te contactamos en menos de 48 horas.
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ 7. FOOTER ============ -->
+    <footer class="footer">
+      <div class="container footer__grid">
+        <div class="footer__brand">
+          <img src="/logo-power-in.svg" alt="Power In" />
+          <p>Nutrición de precisión. Proteína vegetal para acompañar tu rendimiento. Diseñada para tu ritmo.</p>
+        </div>
+
+        <div class="footer__col">
+          <h4>Respaldo</h4>
+          <p>Fabricado por Laboratorios Agronat S.A. — La Paz, Bolivia</p>
+          <p>Importado por Andes Vital S.A. — Buenos Aires, Argentina</p>
+        </div>
+
+        <div class="footer__col">
+          <h4>Contacto</h4>
+          <p><a href="mailto:hola@powerin.com.ar">hola@powerin.com.ar</a></p>
+          <p><a href="tel:+541100000000">+54 11 0000 0000</a></p>
+          <p><a href="https://wa.me/541100000000" target="_blank" rel="noopener">WhatsApp</a></p>
+        </div>
+
+        <div class="footer__col">
+          <h4>Redes</h4>
+          <p><a href="#" target="_blank" rel="noopener">Instagram</a></p>
+          <p><a href="#" target="_blank" rel="noopener">TikTok</a></p>
+          <p><a href="#" target="_blank" rel="noopener">LinkedIn</a></p>
+        </div>
+      </div>
+
+      <div class="container footer__bottom">
+        <p>© <span id="year">2026</span> Power In. Todos los derechos reservados.</p>
+        <a href="#">Política de privacidad</a>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

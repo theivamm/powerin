@@ -229,7 +229,7 @@ function initMotion() {
     () => ({ y: 70, opacity: 0 }),
     () => ({ y: 60, rotate: rand(-4, 4), opacity: 0 }),
     () => ({ scale: 0.85, y: 40, opacity: 0 }),
-    () => ({ x: rand(-60, 60), opacity: 0, rotate: rand(-3, 3) }),
+    () => ({ x: rand(-60, 60) * (innerWidth < 700 ? 0.15 : 1), opacity: 0, rotate: rand(-3, 3) }),
   ];
   ScrollTrigger.batch('[data-reveal]', {
     start: 'top 95%',
@@ -279,8 +279,9 @@ function initMotion() {
 
   /* ----- Footer sorpresa: texto gigante detrás de la imagen ----- */
   const ft = gsap.timeline({ scrollTrigger: { trigger: '.footer', start: 'top 85%', end: 'bottom bottom', scrub: 0.8 } });
-  ft.fromTo('.footer__giant .g1', { xPercent: -30 }, { xPercent: 8, ease: 'none' }, 0)
-    .fromTo('.footer__giant .g2', { xPercent: 30 }, { xPercent: -8, ease: 'none' }, 0)
+  const mob = innerWidth < 700;
+  ft.fromTo('.footer__giant .g1', { xPercent: mob ? -18 : -30 }, { xPercent: mob ? 0 : 6, ease: 'none' }, 0)
+    .fromTo('.footer__giant .g2', { xPercent: mob ? 18 : 30 }, { xPercent: mob ? 0 : -6, ease: 'none' }, 0)
     .fromTo('.footer__img', { yPercent: 28, scale: 0.82 }, { yPercent: 0, scale: 1, ease: 'power1.out' }, 0);
   gsap.from('.footer__grid > *', { y: 30, opacity: 0, duration: 0.7, stagger: 0.1, ease: 'power3.out', scrollTrigger: { trigger: '.footer__grid', start: 'top 92%', once: true } });
 

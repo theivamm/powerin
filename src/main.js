@@ -108,11 +108,20 @@ if (!gsap || !ScrollTrigger) {
 }
 
 function initMotion() {
+  const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+    if (!e.isIntersecting) return;
+    io.unobserve(e.target);
+    e.target.__go?.();
+  }), { threshold: 0, rootMargin: '0px 0px -4% 0px' });
+  const onceVisible = (el, fn) => { el.__go = fn; io.observe(el); };
+  /* Seguro: si algo quedó sin animar tras 6 s, se muestra igual */
+  setTimeout(() => $$('[data-split] .wi, [data-reveal]').forEach((n) => { if (+getComputedStyle(n).opacity < 1 && !n.__shown) { const r = n.getBoundingClientRect(); if (r.top < innerHeight * 1.2) n.__go?.(); } }), 6000);
   /* Fondo girando + barra de progreso */
   gsap.to('.bg', { rotation: 360, duration: 160, ease: 'none', repeat: -1 });
   gsap.to('#progress', { scaleX: 1, ease: 'none', scrollTrigger: { start: 0, end: 'max', scrub: 0.3 } });
 
   /* ----- Palabra por palabra, patrones aleatorios ----- */
+  const splitWordsPlaceholder = null;
   const patterns = [
     () => ({ yPercent: 120, rotate: rand(4, 12) }),
     () => ({ yPercent: -120, rotate: rand(-12, -4) }),
@@ -156,7 +165,8 @@ function initMotion() {
   $$('[data-split]').forEach((el) => {
     const words = splitWords(el);
     if (el.classList.contains('hero__title')) return (window.__heroWords = words);
-    animateWords(words, { scrollTrigger: { trigger: el, start: 'top 85%', once: true } });
+    const tl = animateWords(words, { paused: true });
+    onceVisible(el, () => tl.play());
   });
 
   /* ----- Hero intro ----- */
@@ -231,12 +241,12 @@ function initMotion() {
     () => ({ scale: 0.85, y: 40, opacity: 0 }),
     () => ({ x: rand(-60, 60) * (innerWidth < 700 ? 0.15 : 1), opacity: 0, rotate: rand(-3, 3) }),
   ];
-  ScrollTrigger.batch('[data-reveal]', {
-    start: 'top 95%',
-    once: true,
-    onEnter: (els) => els.forEach((el, i) => gsap.fromTo(el, pick(revealFrom)(), { x: 0, y: 0, scale: 1, rotate: 0, opacity: 1, duration: 0.9, delay: i * 0.1, ease: 'power3.out', clearProps: 'transform' })),
-  });
   gsap.set('[data-reveal]', { opacity: 0 });
+  let revealQ = 0;
+  $$('[data-reveal]').forEach((el) => onceVisible(el, () => {
+    const d = Math.min(revealQ++ % 4, 3) * 0.1;
+    gsap.fromTo(el, pick(revealFrom)(), { x: 0, y: 0, scale: 1, rotate: 0, opacity: 1, duration: 0.9, delay: d, ease: 'power3.out', clearProps: 'transform' });
+  }));
 
   /* Contadores */
   $$('[data-count]').forEach((el) => {
